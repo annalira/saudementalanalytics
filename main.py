@@ -7,6 +7,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 DATABASE_URL = "postgresql://postgres:admin@localhost/postgres"
+# DATABASE_URL = "postgresql://<meu_usuario>:<minha_senha>@localhost/postgres"
 
 app = FastAPI()
 
@@ -49,6 +50,14 @@ def realizar_consulta():
     return maior_idade
 
 
-if __name__ == '__main__':
+# receita de bolo
+@app.get("/maior_estado")
+def consulta_maior_estado():
+    db = SessionLocal()
+    resultado = "consulta sqlalchemy"
+    db.close()
+    return resultado
 
+
+if __name__ == '__main__':
     run("main:app", host="127.0.0.1", port=8000, reload=True)
