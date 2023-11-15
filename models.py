@@ -13,7 +13,7 @@ class DataSus(Base):
     ano = Column(Integer)
     morbidade = Column(String)
     estado = Column(String)
-    sigla_estado = Column("sigla estado", String)
+    siglaestado = Column("sigla estado", String)
     casos = Column(Integer)
 
 
@@ -25,7 +25,7 @@ class Sisab(Base):
     origem = Column(String(50))
     ano = Column(Integer)
     estado = Column(String(50))
-    sigla_estado = Column("sigla estado", String(10))
-    consulta_agendada = Column("consulta agendada", Integer)
-    consulta_no_dia = Column("consulta no dia", Integer)
-    atendimento_de_urgencia = Column("atendimento de urgência", Integer)
+    siglaestado = Column(String(10))
+    consultaagendada = Column(Integer)
+    consultadia = Column(Integer)
+    atendimentourgencia = Column(Integer)
